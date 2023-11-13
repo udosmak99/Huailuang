@@ -1,0 +1,196 @@
+﻿<%@ Master Language="VB" AutoEventWireup="false" CodeFile="Site.Master.vb" Inherits="Site" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head runat="server">
+    <title>โครงการศึกษาวางระบบและติดตั้งระบบโทรมาตรเพื่อการพยากรณ์น้ำและเตือนภัยลุ่มน้ำห้วยหลวง จังหวัดอุดรธานี</title>
+    <%-- <link href="~/Styles/popup.css" rel="stylesheet" type="text/css" />--%>
+    <link href="~/Styles/Site.css" rel="stylesheet" type="text/css" />
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+    </asp:ContentPlaceHolder>
+    <script type="text/JavaScript">
+<!--
+        function MM_swapImgRestore() { //v3.0
+            var i, x, a = document.MM_sr; for (i = 0; a && i < a.length && (x = a[i]) && x.oSrc; i++) x.src = x.oSrc;
+        }
+
+        function MM_preloadImages() { //v3.0
+            var d = document; if (d.images) {
+                if (!d.MM_p) d.MM_p = new Array();
+                var i, j = d.MM_p.length, a = MM_preloadImages.arguments; for (i = 0; i < a.length; i++)
+                    if (a[i].indexOf("#") != 0) { d.MM_p[j] = new Image; d.MM_p[j++].src = a[i]; }
+            }
+        }
+
+        function MM_findObj(n, d) { //v4.01
+            var p, i, x; if (!d) d = document; if ((p = n.indexOf("?")) > 0 && parent.frames.length) {
+                d = parent.frames[n.substring(p + 1)].document; n = n.substring(0, p);
+            }
+            if (!(x = d[n]) && d.all) x = d.all[n]; for (i = 0; !x && i < d.forms.length; i++) x = d.forms[i][n];
+            for (i = 0; !x && d.layers && i < d.layers.length; i++) x = MM_findObj(n, d.layers[i].document);
+            if (!x && d.getElementById) x = d.getElementById(n); return x;
+        }
+
+        function MM_swapImage() { //v3.0
+            var i, j = 0, x, a = MM_swapImage.arguments; document.MM_sr = new Array; for (i = 0; i < (a.length - 2); i += 3)
+                if ((x = MM_findObj(a[i])) != null) { document.MM_sr[j++] = x; if (!x.oSrc) x.oSrc = x.src; x.src = a[i + 2]; }
+        }
+
+        function OpenRid() {
+            window.open("www.rid.go.th", 'rid', 'toolbar=0, menubar=0,location=0,status=1,scrollbars=1,resizable=no,width=800,height=600,left=0,top=0');
+        }
+
+                    //-->
+
+        function OpenPopupContent(Code, w, h) {
+            if (Code == '1') {
+                var id1 = document.getElementById("lblinformation1").value;
+                var winl = (screen.width - w) / 2;
+                var wint = (screen.height - h) / 2;
+                var mywin = window.open("Popupcontent.aspx?infomation_id=" + id1, "MyPopup", " height==" + h + ", width==" + w + ", left=" + winl + ", top=" + wint + ", " + "location=no, menubar=no, resizable=no, scrollbars=yes , toolbar=no", true);
+                mywin.focus();             
+            }
+            if (Code == '2') {
+                var id2 = document.getElementById("lblinformation2").value;
+                var winl = (screen.width - w) / 2;
+                var wint = (screen.height - h) / 2;
+                var mywin = window.open("Popupcontent.aspx?infomation_id=" + id2, "MyPopup", " height==" + h + ", width==" + w + ", left=" + winl + ", top=" + wint + ", " + "location=no, menubar=no, resizable=no, scrollbars=yes , toolbar=no", true);
+                mywin.focus();
+            }
+            if (Code == '3') {
+                var id3 = document.getElementById("lblinformation3").value;
+                var winl = (screen.width - w) / 2;
+                var wint = (screen.height - h) / 2;
+                var mywin = window.open("Popupcontent.aspx?infomation_id=" + id3, "MyPopup", " height==" + h + ", width==" + w + ", left=" + winl + ", top=" + wint + ", " + "location=no, menubar=no, resizable=no, scrollbars=yes , toolbar=no", true);
+                mywin.focus();
+            }
+           
+        }
+
+        function OpenMileStone() {
+            window.open("http://118.175.32.173:82/XProtectMobile/Web/index.html", 'rid', 'toolbar=0, menubar=0,location=0,status=1,scrollbars=1,resizable=no,width=1024,height=800,left=0,top=0');
+
+         }       
+
+    </script>
+    </head>
+<body>
+    <form runat="server">
+    <asp:ScriptManager EnableHistory=true EnablePageMethods =true  runat=server 
+        ID="ScriptManager1" />
+        		
+    <div id="bg-top">
+        <div id="wrapper">
+            <div id="header">
+                <div id="content-logo">
+                    <div class="floatL">
+                        <asp:Image ID="img_logo" runat="server" 
+                            Width="743px" Height="97px" style="margin-right:8px; margin-top:-3px;" 
+                            ImageUrl="~/Images/Header-Logo.png"/></div>
+                    <div class="floatR">
+                         <div style="text-align: left; margin-left:-2px;">
+                        
+                             <br />
+                        
+                             <asp:ImageButton id='imgLogin' runat="server"
+                                 style="cursor: pointer; margin-left: 0px; margin-top:-2px;" 
+                                 ImageUrl="~/Images/official_btn.png"/>
+                        </div>
+                    </div>
+                    &nbsp;
+                             <asp:Image ID="Image3" runat="server" ImageUrl="~/Images/hot-line.png" 
+                                 style="margin-left: 30px" />
+                             &nbsp;
+                             <div style="width:116px; float:left; margin-top:-5px;">
+                                 <asp:Label ID="lblnameLogin" 
+                            runat="server" ForeColor="White"></asp:Label></br><asp:Label ID="lblpositionlogin" 
+                                     runat="server" ForeColor="White"></asp:Label>
+                            </div>
+                    <div><asp:Image ID="Image2" 
+                            runat="server" ImageUrl="~/Images/user.png" 
+                        Visible="False" Width="29px" style="vertical-align:top; margin-left:3px; margin-top:-5px;" /> &nbsp; 
+                        <asp:ImageButton id='imgLogin0' runat="server"
+                                 style="cursor: pointer; text-align: right; margin-top:-13px;" 
+                                 ImageUrl="~/Images/btt-login03.png" Visible="False"/></div>
+                   
+                                 
+                </div>
+                <div id="content-menu">
+                  
+                            <div style="float:left;">
+                                <asp:ImageButton ID="img_main" runat="server" ImageUrl="~/Images/menu/menu_1.png" 
+                                    AlternateText="AGR">
+                                </asp:ImageButton>
+                            </div>
+                             <div style="float:left;">
+                                 <%--<a href="#" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('about','','images/menu/about2.gif',1)">
+        <img src="images/menu/about.gif" name="about" width="164" height="49" border="0">
+        </a>--%>
+                                <asp:ImageButton ID="img_station" runat="server" ImageUrl="~/Images/menu/menu_2.png"
+                                    AlternateText="station"></asp:ImageButton>
+                            </div>
+                             <div style="float:left;">
+                                <asp:ImageButton ID="img_conclude" runat="server" ImageUrl="~/Images/menu/menu_3.png"
+                                    AlternateText="conclude" ></asp:ImageButton>
+                            </div>
+                        
+                            <div style="float:left;">
+                                <asp:ImageButton ID="img_plan" runat="server" ImageUrl="~/Images/menu/menu_5.png"
+                                    AlternateText="plan"></asp:ImageButton>
+                            </div>
+                            
+                            <%--     <td width="144">
+                                                                <a href="#" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('water','','images/menu/water2.gif',1)">
+        <img src="images/menu/water.gif" name="water" width="144" height="49" border="0">
+        </a>
+                                                                <asp:ImageButton ID="img_water" runat="server" ImageUrl="~/Images/menu/water.gif"
+                                                                        AlternateText="about"></asp:ImageButton>
+                                                        </td>--%><%-- <td width="1">
+                                                                <asp:Image ID="img_line5" runat="server" ImageUrl="./Images/menu/line.gif" Width="1"
+                                                                        Height="48" />
+                                                        </td>--%>
+                            <div style="float:left;">
+                                <%--<a href="#" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('cctv','','images/menu/cctv2.gif',1)">
+        <img src="images/menu/cctv.gif" name="cctv" width="164" height="49" border="0">        </a>--%>
+                                <asp:ImageButton ID="img_about" runat="server" ImageUrl="~/Images/menu/menu_6.png"
+                                    AlternateText="about"></asp:ImageButton>
+                            </div>
+                            
+                            <div style="float:left;">
+                                <asp:ImageButton ID="img_cctv" runat="server" AlternateText="cctv" 
+                                    ImageUrl="~/Images/menu/menu_7.png" OnClientClick="OpenMileStone()">
+                                </asp:ImageButton>
+                            </div>
+                    
+                </div>
+            </div>
+            
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+            </asp:ContentPlaceHolder>
+            
+        </div>
+        <!-- wrapper-->
+    </div>
+    <%-- <div>  <asp:Label ID="Label1" runat="server" 
+                Text="อยู่ในระหว่างดำเนินการทดสอบระบบข้อมูล ไม่สามารถนำไปใช้อ้างอิงได้" 
+                ForeColor="black" Font-Bold="True" Font-Size="Medium"></asp:Label></div>--%>
+    
+        <div style="background-image:url(images/footer.jpg); width:100%; background-repeat:repeat-x; height:120px;" align="center">
+	
+		<div style="background-image:url(images/footer_2.jpg); width:1006px; height:120px;" align="center">
+		
+				<div align="right">
+				
+						<div style="padding-top:20px;"><img src="images/facebook_01.png"> <img src="images/facebook_02.png"></div>
+						<div style="font-size:13px; font-family:Tahoma; padding-top:45PX;">SITEMAP | PRIVACY</div>
+						
+				</div>
+		</div>
+	
+	
+	</div>
+    
+    </form>
+    
+</body>
+</html>
